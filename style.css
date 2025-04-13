@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #011120;
+}
+
+.hero {
+    background: #1e2a38;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width:100%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.card, .skill-card, .project-card {
+    background: #c6c7ce;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s ease;
+    margin-top: 20px;
+    width: 100%;
+}   
+/* Card Responsiveness */
+@media (max-width: 992px) {
+    .card, .skill-card, .project-card {
+        width: 90%; /* Adjust width to fit smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card, .skill-card, .project-card {
+        width: 100%; /* Full width for mobile screens */
+        padding:5px; /* Adjust padding */
+    }
+    .card {
+        min-height: 250px; /* Adjust the minimum height as needed */
+        min-width: 300px !important;
+    }
+}
+ 
+.card-img-top {
+    border-radius: 10px;
+}
+
+.card:hover, .skill-card:hover, .project-card:hover {
+    transform: perspective(800px) rotateX(15deg) rotateY(15deg);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Form Control Responsiveness */
+.form-control {
+    width: 100%; /* Full width on mobile */
+    margin: 10px auto;
+}
+
+@media (min-width: 576px) {
+    .form-control {
+        width: 80%; /* Adjust width for larger screens */
+    }
+}
+
+.navbar {
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; /* Stack the navbar items on mobile */
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        display: block; /* Show hamburger menu on mobile */
+    }
+}
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #f05c06 !important;
+}
+
+.skill-card h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.project-card h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+ 
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#background-video {
+    object-fit: cover; /* Ensures video covers the full background without stretching */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* Text inside the video container */
+.hero .container {
+    position: relative; /* Ensures the text stays on top of the video */
+    z-index: 1;
+    color: white;
+}
+
+/* Fade-In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#background-video {
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* glow effect */
+.glow {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
+                 0 0 20px rgba(0, 255, 255, 0.6), 
+                 0 0 30px rgba(0, 255, 255, 0.5), 
+                 0 0 40px rgba(0, 255, 255, 0.4);
+    animation: glowAnimation 1.5s infinite alternate;
+  }
+
+  @keyframes glowAnimation {
+    0% {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
+                   0 0 20px rgba(0, 255, 255, 0.6), 
+                   0 0 30px rgba(0, 255, 255, 0.5), 
+                   0 0 40px rgba(0, 255, 255, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 15px rgba(0, 255, 255, 1), 
+                   0 0 30px rgba(0, 255, 255, 0.8), 
+                   0 0 45px rgba(0, 255, 255, 0.6), 
+                   0 0 60px rgba(0, 255, 255, 0.5);
+    }}
+
+    /* kutty video  */
+
+    .video-container {
+        /* width: 500px;
+        height: 280px; */
+        overflow: hidden;
+        /* border-radius: 10px; */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        object-fit: cover;
+      }
+  
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* scroll button */
+      /* Style for the Scroll to Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #012852;
+    color: white;
+    border: none;
+    border-radius: 30%;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        bottom: 10px;
+        right: 10px;
+        font-size: 18px; /* Make the button smaller on mobile */
+    }
+}
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+
+/* typing */
+/* Typing Effect Styles */
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 14ch; /* Adjust according to the text length */
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .typing {
+    display: inline-block;
+    width: 0;
+    border-right: 3px solid #fff; /* Cursor effect */
+    animation: typing 3s steps(14) 1s 1 normal both, blink 0.75s step-end infinite;
+    font-family: 'Courier New', Courier; /* For typewriter font */
+    font-size: 2rem; /* Size of the text */
+    color: #fff; /* Text color */
+    letter-spacing: 0px; /* Space between letters */
+    white-space: nowrap; /* Prevents text from breaking into a new line */
+    
+  }
+
+  .typing-html {
+    color: #E44D26; /* HTML color */
+  }
+  
+  
+.card {
+    min-height: 250px; /* Adjust the minimum height as needed */
+    min-width: 500px;
+
+}
+
+.about .card-body {
+    padding: 20px;
+    font-size: 1.1rem;
+    text-align: center;    
+    
+}
+/* Center the card horizontally and vertically */
+.row {
+    display: flex;
+    justify-content: center; /* Centers the cards horizontally */
+    align-items: center; /* Centers the cards vertically */
+    /* min-height: 100vh; Ensures it takes at least the full height of the viewport */
+}
+
+.col-md-6, .col-lg-4 {
+    display: flex;
+    justify-content: center; /* Centers the card inside the column */
+    align-items: center; /* Vertically centers the card */
+}
+
+/* new added */
+/* Fade-in effect when sections come into view */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Trigger animation when scrolling */
+@keyframes fadeInOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-scroll {
+    animation: fadeInOnScroll 1.5s ease-out forwards;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* Button Bounce Animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.btn-primary:active {
+    animation: bounce 0.5s ease-out;
+}
+/* Slide-in text animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.hero h1 {
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Moving background animation for Hero Section */
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.hero {
+    background: linear-gradient(45deg, #1e2a38, #2c3e50);
+    background-size: 200% 200%;
+    animation: moveBackground 5s ease infinite;
+}
+/* Navbar fade-in effect */
+.navbar {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.navbar.visible {
+    opacity: 1;
+}
+/* Zoom-in effect for project cards */
+.project-card {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@keyframes zoomInOnScroll {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
